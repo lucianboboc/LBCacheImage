@@ -158,7 +158,7 @@ extension ImageOperation: NSURLSessionDelegate {
     }
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
-        self.locationURL = location
+        
         if let str = downloadTask.response?.URL?.absoluteString? {
             if let hash = (str as NSString).hashMD5() {
                 if let tmpURL = NSURL(fileURLWithPath: NSTemporaryDirectory()) {
