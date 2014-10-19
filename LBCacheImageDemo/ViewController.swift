@@ -8,14 +8,24 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     private var arr:[NSString]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.arr = ["http://www.lucianboboc.com/TEST/0.png"]
+        self.arr = ["http://www.lucianboboc.com/wong.png",
+        "http://www.lucianboboc.com/TEST/0.png",
+        "http://www.lucianboboc.com/TEST/1.png",
+        "http://www.lucianboboc.com/TEST/2.png",
+        "http://www.lucianboboc.com/TEST/3.png",
+        "http://www.lucianboboc.com/TEST/4.png",
+        "http://www.lucianboboc.com/TEST/0.png",
+        "http://www.lucianboboc.com/TEST/1.png",
+        "http://www.lucianboboc.com/TEST/2.png",
+        "http://www.lucianboboc.com/TEST/3.png",
+        "http://www.lucianboboc.com/TEST/4.png"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,21 +38,33 @@ class ViewController: UIViewController {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier") as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier") as MyCell
         
         var imageURL = self.arr[indexPath.row]
-        cell.imageView.setImage(urlString: imageURL, placeholderImage: nil, options: .Default, progressBlock: { (progress) -> Void in
+        
+        cell.imgView.setImage(urlString: imageURL, placeholderImage: nil, options: .Default, progressBlock: { (progress) -> Void in
             println(progress)
-            }) { (image, error) -> Void in
-                println("image \(image)")
-                println("error \(error)")
+            }) { [weak cell] (image, error) -> Void in
+                dispatch_async(dispatch_get_main_queue()){
+                    if error != nil {
+                        println(error!)
+                    }
+                }
         }
         
-        
-        cell.textLabel.text = "\(indexPath.row)"
         return cell
     }
-
+    
+    
+    func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        var myCell = cell as MyCell
+        myCell.imgView.cancelDownload()
+    }
+    
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
 
 }
 

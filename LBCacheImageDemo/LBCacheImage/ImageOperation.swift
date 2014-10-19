@@ -159,7 +159,30 @@ extension ImageOperation: NSURLSessionDelegate {
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
         self.locationURL = location
+        if let str = downloadTask.response?.URL?.absoluteString? {
+            if let hash = (str as NSString).hashMD5() {
+                if let tmpURL = NSURL(fileURLWithPath: NSTemporaryDirectory()) {
+                    var imageURL = tmpURL.URLByAppendingPathComponent(hash)
+                    
+                    var error:NSError? = nil
+                    if self.fileManager.fileExistsAtPath(imageURL.path!) {
+                        var resultingURL:NSURL? = imageURL
+                        var success = self.fileManager.replaceItemAtURL(imageURL, withItemAtURL: location, backupItemName: nil, options: NSFileManagerItemReplacementOptions.WithoutDeletingBackupItem, resultingItemURL: &resultingURL, error: &error)
+                        if success == true {
+                            self.locationURL = imageURL
+                        }
+                    }else {
+                        var success = self.fileManager.copyItemAtURL(location, toURL: imageURL, error: &error)
+                        if success == true {
+                            self.locationURL = imageURL
+                        }
+                    }
+                }
+            }
+        }
     }
+    
+    
     
     func URLSession(session: NSURLSession, task: NSURLSessionTask, didCompleteWithError error: NSError?) {
         if error != nil {
