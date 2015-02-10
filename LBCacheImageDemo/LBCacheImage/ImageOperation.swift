@@ -226,11 +226,25 @@ extension ImageOperation: NSURLSessionDelegate {
             return nil
         }
         
+        var orientation:UIImageOrientation! = .Up
+        
+        var properties = CGImageSourceCopyPropertiesAtIndex(imageSource, 0, nil)
+        if properties != nil {
+            var ptr = unsafeAddressOf(kCGImagePropertyOrientation)
+            if ptr != nil {
+                var val = CFDictionaryGetValue(properties, ptr)
+                if val != nil {
+                    var number = CFNumberCreate(kCFAllocatorDefault, CFNumberType.IntType, val)
+                    CFNumberGetValue(number, CFNumberType.IntType, &orientation)
+                }
+            }
+        }
+        
         var imageRef = CGImageSourceCreateImageAtIndex(imageSource, 0, nil)
         if imageRef == nil {
             return nil
         }else {
-            var image = UIImage(CGImage: imageRef)
+            var image = UIImage(CGImage: imageRef, scale: UIScreen.mainScreen().scale, orientation: orientation!)
             return image
         }
     }
