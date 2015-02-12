@@ -17,8 +17,8 @@
 		6739701E19F39E9000C6A234 /* LBCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6739701919F39E9000C6A234 /* LBCacheImage.swift */; };
 		6739701F19F39E9000C6A234 /* LBImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6739701A19F39E9000C6A234 /* LBImageView.swift */; };
 		6739702019F39E9000C6A234 /* LBString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6739701B19F39E9000C6A234 /* LBString.swift */; };
-		67A68C291A8D3D6800BD8B11 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 67A68C271A8D3D6800BD8B11 /* LICENSE.md */; };
-		67A68C2E1A8D402200BD8B11 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 67A68C2D1A8D402200BD8B11 /* README.md */; };
+		67A68C311A8D430F00BD8B11 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 67A68C2F1A8D430F00BD8B11 /* LICENSE.md */; };
+		67A68C321A8D430F00BD8B11 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 67A68C301A8D430F00BD8B11 /* README.md */; };
 		67ACF0D719F4588500DAA37D /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ACF0D619F4588500DAA37D /* MyCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +48,8 @@
 		6739701A19F39E9000C6A234 /* LBImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBImageView.swift; sourceTree = "<group>"; };
 		6739701B19F39E9000C6A234 /* LBString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBString.swift; sourceTree = "<group>"; };
 		6739701C19F39E9000C6A234 /* Objc-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Objc-Bridging-Header.h"; sourceTree = "<group>"; };
-		67A68C271A8D3D6800BD8B11 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = "<group>"; };
-		67A68C2D1A8D402200BD8B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		67A68C2F1A8D430F00BD8B11 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = LICENSE.md; sourceTree = SOURCE_ROOT; };
+		67A68C301A8D430F00BD8B11 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		67ACF0D619F4588500DAA37D /* MyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,10 +97,10 @@
 				67ACF0D619F4588500DAA37D /* MyCell.swift */,
 				6739701719F39E9000C6A234 /* LBCacheImage */,
 				67396FFB19F39E8400C6A234 /* Main.storyboard */,
+				67A68C2F1A8D430F00BD8B11 /* LICENSE.md */,
+				67A68C301A8D430F00BD8B11 /* README.md */,
 				67396FFE19F39E8400C6A234 /* Images.xcassets */,
 				6739700019F39E8400C6A234 /* LaunchScreen.xib */,
-				67A68C271A8D3D6800BD8B11 /* LICENSE.md */,
-				67A68C2D1A8D402200BD8B11 /* README.md */,
 				67396FF519F39E8400C6A234 /* Supporting Files */,
 			);
 			path = LBCacheImageDemo;
@@ -247,9 +247,9 @@
 				6739701D19F39E9000C6A234 /* ImageOperation.swift in Sources */,
 				6739701F19F39E9000C6A234 /* LBImageView.swift in Sources */,
 				6739701E19F39E9000C6A234 /* LBCacheImage.swift in Sources */,
-				67A68C291A8D3D6800BD8B11 /* LICENSE.md in Sources */,
+				67A68C311A8D430F00BD8B11 /* LICENSE.md in Sources */,
 				67ACF0D719F4588500DAA37D /* MyCell.swift in Sources */,
-				67A68C2E1A8D402200BD8B11 /* README.md in Sources */,
+				67A68C321A8D430F00BD8B11 /* README.md in Sources */,
 				6739702019F39E9000C6A234 /* LBString.swift in Sources */,
 				67396FF819F39E8400C6A234 /* AppDelegate.swift in Sources */,
 			);
