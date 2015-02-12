@@ -73,8 +73,7 @@ extension UIImageView {
         var imageOperation = objc_getAssociatedObject(self, &instance) as? ImageOperation
         if imageOperation != nil {
             imageOperation!.cancel()
-            var char:Character = "c"
-            objc_setAssociatedObject(self, &char, nil, UInt(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
+            objc_setAssociatedObject(self, &instance, nil, UInt(OBJC_ASSOCIATION_RETAIN_NONATOMIC))
         }
     }
 }
