@@ -150,7 +150,7 @@ class LBCacheImage {
             return image as? UIImage
         }else {
             if let path = self.imagePathLocation(key: key) {
-                var image = UIImage(contentsOfFile: path)
+                var image = UIImage(contentsOfFile: path as String)
                 return image
             }else {
                 return nil
@@ -162,7 +162,7 @@ class LBCacheImage {
     func imagePathLocation(#key:NSString) -> NSString? {
         if let directory = self.getLBCacheDirectory() {
             if let imageName = key.hashWithType(.MD5) {
-                var imageURL = directory.URLByAppendingPathComponent(imageName)
+                var imageURL = directory.URLByAppendingPathComponent(imageName as String)
                 var fm = NSFileManager()
                 if fm.fileExistsAtPath(imageURL.path!) {
                     return imageURL.path!
@@ -249,7 +249,7 @@ class LBCacheImage {
     private func loadImageFromDiskOrFromWeb(#urlString:NSString, progressBlock: LBCacheProgressBlock?, completionBlock: LBCacheImageBlock) -> ImageOperation? {
         var imageOperation:ImageOperation? = nil
         if let imagePath = self.imagePathLocation(key: urlString) {
-            if let image = UIImage(contentsOfFile: imagePath) {
+            if let image = UIImage(contentsOfFile: imagePath as String) {
                 self.memoryCache.setObject(image, forKey: urlString)
                 completionBlock(image, nil)
             }else {
@@ -267,7 +267,7 @@ class LBCacheImage {
     
     private func loadImageFromDisk(#urlString:NSString, completionBlock: LBCacheImageBlock) -> ImageOperation? {
         if let imagePath = self.imagePathLocation(key: urlString) {
-            if let image = UIImage(contentsOfFile: imagePath) {
+            if let image = UIImage(contentsOfFile: imagePath as String) {
                 self.memoryCache.setObject(image, forKey: urlString)
                 completionBlock(image, nil)
             }else {

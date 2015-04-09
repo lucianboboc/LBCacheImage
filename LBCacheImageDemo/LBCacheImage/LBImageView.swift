@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Lucian Boboc. All rights reserved.
 //
 
-import UIkit
+import UIKit
 import ObjectiveC
 
 

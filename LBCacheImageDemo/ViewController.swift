@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier") as MyCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("cellIdentifier") as! MyCell
         
         var imageURL = self.arr[indexPath.row]
         
@@ -57,7 +57,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     
     func tableView(tableView: UITableView, didEndDisplayingCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        var myCell = cell as MyCell
+        var myCell = cell as! MyCell
         myCell.imgView.cancelDownload()
     }
     

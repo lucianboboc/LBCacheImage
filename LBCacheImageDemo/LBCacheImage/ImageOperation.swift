@@ -101,7 +101,7 @@ class ImageOperation: NSOperation {
     }
     
     private func getTheMutableRequest() -> NSMutableURLRequest? {
-        var url = NSURL(string: self.urlString)
+        var url = NSURL(string: self.urlString as String)
         if url != nil {
             var request = NSMutableURLRequest(URL: url!, cachePolicy: .ReloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 30)
             request.allHTTPHeaderFields = ["Accept":"image/*"]
@@ -159,10 +159,10 @@ extension ImageOperation: NSURLSessionDelegate {
     
     func URLSession(session: NSURLSession, downloadTask: NSURLSessionDownloadTask, didFinishDownloadingToURL location: NSURL) {
         
-        if let str = downloadTask.response?.URL?.absoluteString? {
+        if let str = downloadTask.response?.URL?.absoluteString {
             if let hash = (str as NSString).hashMD5() {
                 if let tmpURL = NSURL(fileURLWithPath: NSTemporaryDirectory()) {
-                    var imageURL = tmpURL.URLByAppendingPathComponent(hash)
+                    var imageURL = tmpURL.URLByAppendingPathComponent(hash as String)
                     
                     var error:NSError? = nil
                     if self.fileManager.fileExistsAtPath(imageURL.path!) {
@@ -256,7 +256,7 @@ extension ImageOperation: NSURLSessionDelegate {
         if imagesURLDirectory != nil {
             var imageName:NSString? = urlString.hashWithType(.MD5)
             if imageName != nil {
-                var imageURL = imagesURLDirectory!.URLByAppendingPathComponent(imageName!)
+                var imageURL = imagesURLDirectory!.URLByAppendingPathComponent(imageName! as String)
                 
                 if self.fileManager.fileExistsAtPath(imageURL.path!) {
                     var resultingURL:NSURL? = imageURL

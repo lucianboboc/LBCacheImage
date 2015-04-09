@@ -17,8 +17,6 @@
 		6739701E19F39E9000C6A234 /* LBCacheImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6739701919F39E9000C6A234 /* LBCacheImage.swift */; };
 		6739701F19F39E9000C6A234 /* LBImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6739701A19F39E9000C6A234 /* LBImageView.swift */; };
 		6739702019F39E9000C6A234 /* LBString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6739701B19F39E9000C6A234 /* LBString.swift */; };
-		67A68C311A8D430F00BD8B11 /* LICENSE.md in Sources */ = {isa = PBXBuildFile; fileRef = 67A68C2F1A8D430F00BD8B11 /* LICENSE.md */; };
-		67A68C321A8D430F00BD8B11 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 67A68C301A8D430F00BD8B11 /* README.md */; };
 		67ACF0D719F4588500DAA37D /* MyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67ACF0D619F4588500DAA37D /* MyCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -247,9 +245,7 @@
 				6739701D19F39E9000C6A234 /* ImageOperation.swift in Sources */,
 				6739701F19F39E9000C6A234 /* LBImageView.swift in Sources */,
 				6739701E19F39E9000C6A234 /* LBCacheImage.swift in Sources */,
-				67A68C311A8D430F00BD8B11 /* LICENSE.md in Sources */,
 				67ACF0D719F4588500DAA37D /* MyCell.swift in Sources */,
-				67A68C321A8D430F00BD8B11 /* README.md in Sources */,
 				6739702019F39E9000C6A234 /* LBString.swift in Sources */,
 				67396FF819F39E8400C6A234 /* AppDelegate.swift in Sources */,
 			);
